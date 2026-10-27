@@ -48,7 +48,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }): Reac
         setModeState(stored);
       }
     });
-    AccessibilityInfo.isReduceTransparencyEnabled()
+    // isReduceTransparencyEnabled is iOS-only: react-native-web does not
+    // implement it, and calling it unguarded crashes the whole web app at
+    // startup. Feature-detect so native behavior is unchanged and web
+    // simply keeps reduceTransparency false.
+    AccessibilityInfo.isReduceTransparencyEnabled?.()
       .then((value) => {
         if (mounted) {
           setReduceTransparency(value);
