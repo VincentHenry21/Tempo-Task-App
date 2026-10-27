@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#000000"/><stop offset="0.55" stop-color="#000000"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="0.2" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowLime" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#E3F4A0" stop-opacity="0.7"/><stop offset="1" stop-color="#E3F4A0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <rect width="1024" height="1024" fill="url(#glowL)" opacity="0"/>
+    <rect width="1024" height="1024" fill="url(#glowLime)" opacity="0"/>
+  <g transform="translate(512 512) scale(1) translate(-512 -512)">
+    <rect x="232" y="494" width="150" height="300" rx="75" fill="#0A1450" opacity="0.30" filter="url(#soft)"/>
+    <rect x="232" y="472" width="150" height="300" rx="75" fill="url(#glass)" stroke="url(#rim)" stroke-width="4"/>
+    <rect x="256" y="490" width="102" height="64" rx="32" fill="#fff" opacity="0.38"/>
+    <rect x="437" y="354" width="150" height="440" rx="75" fill="#0A1450" opacity="0.30" filter="url(#soft)"/>
+    <rect x="437" y="332" width="150" height="440" rx="75" fill="url(#glass)" stroke="url(#rim)" stroke-width="4"/>
+    <rect x="461" y="350" width="102" height="64" rx="32" fill="#fff" opacity="0.38"/>
+    <rect x="642" y="214" width="150" height="580" rx="75" fill="#0A1450" opacity="0.30" filter="url(#soft)"/>
+    <rect x="642" y="192" width="150" height="580" rx="75" fill="url(#glass)" stroke="url(#rim)" stroke-width="4"/>
+    <rect x="666" y="210" width="102" height="64" rx="32" fill="#fff" opacity="0.38"/></g>
+</svg>
