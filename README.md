@@ -2,6 +2,14 @@
 
 Tempo is a scheduling and planning app for GitHub users, built with Expo (React Native) + TypeScript + expo-router. Tasks, a calendar, and weekly work tracking, synced with GitHub issues.
 
+## Use it on your phone (no computer)
+
+Once the site is live, open this link on your phone and use Tempo like any web app:
+
+https://vincenthenry21.github.io/Tempo-Task-App/
+
+No install and no computer needed. Your tasks are saved in the browser on your phone. Tap "Try demo" to explore with seeded data, or sign in with a personal access token to sync real GitHub issues. GitHub OAuth sign-in is only available in the native app, not on the web.
+
 ## Quick start (run these in order)
 
 ```bash
@@ -75,7 +83,7 @@ Note: exchanging an OAuth authorization code for a token requires a client secre
 1. Go to GitHub Settings, then Developer settings, then Personal access tokens, then Tokens (classic).
 2. Generate a new token with the `repo` and `read:user` scopes.
 3. On the login screen, tap "Use a personal access token", paste the token, and sign in.
-4. Tempo validates the token against `GET https://api.github.com/user` and stores it only in `expo-secure-store` on the device. It is never stored in AsyncStorage and never logged.
+4. Tempo validates the token against `GET https://api.github.com/user` and stores it only on the device: in `expo-secure-store` on native, and in browser local storage on the web. It is never logged.
 
 ## Demo mode
 

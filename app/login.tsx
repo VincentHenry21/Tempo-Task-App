@@ -131,13 +131,20 @@ export default function Login(): React.JSX.Element {
         <Text style={[typography.body, { color: colors.textSecondary, marginTop: 12 }]}>
           Connect GitHub to turn assigned issues into tasks, or try the demo with no setup.
         </Text>
-        <PrimaryButton
-          accessibilityLabel="Continue with GitHub"
-          disabled={busy}
-          onPress={() => void handleOAuth()}
-          style={styles.githubButton}
-          title="Continue with GitHub"
-        />
+        {Platform.OS === 'web' ? null : (
+          <PrimaryButton
+            accessibilityLabel="Continue with GitHub"
+            disabled={busy}
+            onPress={() => void handleOAuth()}
+            style={styles.githubButton}
+            title="Continue with GitHub"
+          />
+        )}
+        {Platform.OS === 'web' ? (
+          <Text style={[typography.body, { color: colors.textSecondary, marginTop: 16 }]}>
+            On the web, sign in with a personal access token below, or try the demo. GitHub OAuth sign-in is available in the native app.
+          </Text>
+        ) : null}
         <Pressable
           accessibilityLabel="Use a personal access token"
           accessibilityRole="button"
@@ -207,7 +214,7 @@ export default function Login(): React.JSX.Element {
             <Text style={[typography.body, { color: colors.textSecondary, marginTop: 12, lineHeight: 22 }]}>
               1. Open GitHub, then Settings, then Developer settings, then Personal access tokens.{'\n'}
               2. Generate a classic token with the repo and read:user scopes.{'\n'}
-              3. Copy it and paste it here. Tempo stores it only in secure storage on this device.
+              3. Copy it and paste it here. Tempo stores it only on this device.
             </Text>
             <PrimaryButton accessibilityLabel="Close help" onPress={() => setHelpVisible(false)} title="Got it" />
             </View>
